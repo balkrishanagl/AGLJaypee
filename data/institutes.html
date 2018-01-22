@@ -1,0 +1,39 @@
+<div class="main_data_inner">
+    <!--<div class="tab_slider owl-carousel">-->
+    <div class="tab_links">
+        <a href="data/institutes/heart.html" class="tab_item active">Heart</a>
+        <a href="data/institutes/ophthalmology.html" class="tab_item">Ophthalmology</a>
+        <a href="data/institutes/organ-transplant.html" class="tab_item">Organ Transplant</a>
+        <a href="data/institutes/mother-child.html" class="tab_item">Mother & Child </a>
+        <a href="data/institutes/aesthetic.html" class="tab_item">Aesthetic & Reconstructive Surgery</a>
+        <a href="data/institutes/renal.html" class="tab_item">Renal Diseases</a>
+        <a href="data/institutes/gi-hapatobilliary.html" class="tab_item">GI & Hapatobilliary Sciences</a>
+        <a href="data/institutes/neuroscience.html" class="tab_item">Neurosciences</a>
+        <a href="data/institutes/minimally.html" class="tab_item">Minimally Invasive Surgery</a>
+        <a href="data/institutes/orthopaedics.html" class="tab_item">Orthopaedics & Spine</a>
+        <a href="data/institutes/oncology.html" class="tab_item">Oncology</a>
+    </div>
+    <div class="tab_slider_data"></div>
+</div>
+<script>
+$(document).ready(function() {
+   $(".tab_slider").owlCarousel({
+	margin:10,
+	items:6,
+	nav:true,
+	dots:false,
+	autoWidth:true
+  });
+});
+var tabSlider = $(".tab_item");
+	tabSlider.click(function(e){
+		e.preventDefault();
+		var tabData = $(this).attr("href");
+		tabSlider.removeClass("active");
+		$(this).addClass("active");
+		$(".tab_slider_data").hide();
+		$(".tab_slider_data").load(tabData).fadeIn(300);
+	});
+var tabSliderActive = $(".tab_item.active");
+$(".tab_slider_data").load(tabSliderActive.attr("href")).fadeIn(300);
+</script>

@@ -1,0 +1,44 @@
+<div class="main_data_inner">
+    <div class="tab_links">
+        <a href="data/departments/ophthalmology.html" class="tab_item active">Ophthalmology</a>
+        <a href="data/departments/behavioural-sciences.html" class="tab_item">Behavioural Sciences</a>
+        <a href="data/departments/dental-surgery.html" class="tab_item">Dental Surgery</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Sports Medicine &amp; Rehabilitation</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Nuclear Medicine</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Transfusion medicine (Blood Bank)</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Laboratory Medicine</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Radiology</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Ear, Nose &amp; Throat</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Rheumatology</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Internal Medicine</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Infertility &amp; IVF</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Endocrinology &amp; Diabetes</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Respiratory &amp; Critical Care Medicine</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Critical Care &amp; Anesthesiology</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Emergency &amp; Trauma</a>
+        <a href="data/departments/ophthalmology.html" class="tab_item">Haematology &amp; Bone Marrow Transplant</a>
+    </div>
+    <div class="tab_slider_data"></div>
+</div>
+<script>
+$(document).ready(function() {
+   $(".tab_slider").owlCarousel({
+	margin:10,
+	items:6,
+	nav:true,
+	dots:false,
+	autoWidth:true
+  });
+});
+var tabSlider = $(".tab_item");
+	tabSlider.click(function(e){
+		e.preventDefault();
+		var tabData = $(this).attr("href");
+		tabSlider.removeClass("active");
+		$(this).addClass("active");
+		$(".tab_slider_data").hide();
+		$(".tab_slider_data").load(tabData).fadeIn(300);
+	});
+var tabSliderActive = $(".tab_item.active");
+$(".tab_slider_data").load(tabSliderActive.attr("href")).fadeIn(300);
+</script>

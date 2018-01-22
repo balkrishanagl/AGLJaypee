@@ -1,0 +1,68 @@
+<?php
+/*
+ * Implementation of hook_menu()
+ */
+function helloworld_menu()
+{
+    $items['ajax_call'] = array('title' => 'Page Title',
+        'description' => 'Simple custom hook_menu() implementation.',
+        'page callback' => 'my_page_function',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+);
+//    $items['ajax_inst_doctor'] = array('title' => 'Page Title',
+//        'description' => 'Simple custom hook_menu() implementation.',
+//        'page callback' => 'my_inst_doctor_function',
+//        'access callback' => TRUE,
+//        'type' => MENU_CALLBACK,
+//    );
+//    $items['ajax_dept_doctor'] = array('title' => 'Page Title',
+//        'description' => 'Simple custom hook_menu() implementation.',
+//        'page callback' => 'my_dept_doctor_function',
+//        'access callback' => TRUE,
+//        'type' => MENU_CALLBACK,
+//    );
+
+    $items['ajax_doctor'] = array('title' => 'Page Title',
+        'description' => 'Simple custom hook_menu() implementation.',
+        'page callback' => 'my_doctor_function',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+/*
+ * Returns custom content to Drupal
+ */
+function my_page_function()
+{
+    // Call theme() function, so that Drupal includes the custom-page.tpl.php template
+    return theme('my_custom_template');
+}
+/*
+ * Returns custom content to Drupal
+ */
+function my_doctor_function()
+{
+    // Call theme() function, so that Drupal includes the custom-doctor.tpl.php template
+    return theme('my_custom_doctor_template');
+}
+/*
+ * Implementation of hook_theme().
+ */
+function helloworld_theme()
+{
+    $theme = array();
+    $theme['my_custom_template'] = array(
+        //'render element' => 'content',
+        'template' => 'custom-page',
+        /*'path' => drupal_get_path('module', 'mymodule') . '/templates',*/
+    );
+    $theme['my_custom_doctor_template'] = array(
+        //'render element' => 'content',
+        'template' => 'custom-doctor',
+        /*'path' => drupal_get_path('module', 'mymodule') . '/templates',*/
+    );
+    return $theme;
+}

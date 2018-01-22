@@ -1,0 +1,45 @@
+name = jaypee
+description = Jaypee healthcare.
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[all][] = animate.css
+stylesheets[all][] = layout.css
+regions[homepage_sideblock_one] = Homepage SideBlock One
+regions[homepage_sideblock_two] = Homepage SideBlock Two
+regions[user_register_header_markup] = User register Header Markup
+regions[header_login_details] = header_login_details
+regions[social_media] = Social Media
+regions[filter_area] = Filter Area
+regions[footer_links] = Footer Links
+regions[bread_crumb] = header breadcrumb
+regions[product_menu] = Product Menu
+regions[page_banner] = Page Banner
+regions[footer_main] = Footer Main
+regions[social_login_form] = Social Login Form
+regions[calculator_regions] = Calculator
+
+
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[triptych_first] = Triptych first
+regions[triptych_middle] = Triptych middle
+regions[triptych_last] = Triptych last
+regions[other_suitable_matches] = Product Matches
+
+regions[footer_firstcolumn] = Footer first column
+regions[footer_secondcolumn] = Footer second column
+regions[footer_thirdcolumn] = Footer third column
+regions[footer_fourthcolumn] = Footer fourth column
+regions[footer] = Footer
+
+settings[shortcut_module_link] = 0
